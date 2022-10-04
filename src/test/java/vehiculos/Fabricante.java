@@ -5,9 +5,9 @@ import java.util.ArrayList;
 public class Fabricante {
 	String nombre;
 	Pais pais;
-	private ArrayList<Vehiculo> fabricados = new ArrayList<Vehiculo>();
-	private ArrayList<Fabricante> fabricas = new ArrayList<Fabricante>();
+	int autosFabricados;
 
+	static private ArrayList<Fabricante> fabricas = new ArrayList<Fabricante>();
 
 	
 	public Fabricante(String nombre, Pais pais) {
@@ -30,9 +30,14 @@ public class Fabricante {
 	public void setPais(Pais pais) {
 		this.pais = pais;
 	}
-	public void agregarVehiculo(Vehiculo veh){
-		fabricados.add(veh);
-		
+
+	public static Fabricante fabricaMayorVentas() {
+	    Fabricante max=fabricas.get(0);
+		for (int i = 0; i < fabricas.size(); i++)
+			if (max.autosFabricados < fabricas.get(i).autosFabricados) {
+				max=fabricas.get(i);
+			}
+		return max;
 	}
 
 }

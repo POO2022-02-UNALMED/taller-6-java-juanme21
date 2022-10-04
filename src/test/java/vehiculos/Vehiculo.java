@@ -23,7 +23,7 @@ public class Vehiculo {
 		this.traccion = traccion;
 		this.fabricante = fabricante;
 		Vehiculo.cantidadVehiculos++;
-		fabricante.agregarVehiculo(this);
+		fabricante.autosFabricados++;
 	}
 	
 	public String vehiculosPorTipo(){
